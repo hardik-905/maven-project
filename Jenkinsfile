@@ -1,21 +1,20 @@
 pipeline {
-  agent any
-  stages {
-    stage('git SCM checkout')
-    steps {
-      git https://github.com/hardik-905/maven-project.git
+    agent any
+    stages {
+        stage('SCM checkout') {
+            steps {
+                git 'https://github.com/hardik-905/maven-project.git'
+            }
+        }
+        stage('Test message') {
+            steps {
+                sh 'echo hello'
+            }
+        }
+        stage('message') {
+            steps {
+                sh 'echo hello2'
+            }
+        }
     }
-
-    stage('level 2')
-    steps {
-      sh 'echo mumbai'
-    }
-
-    stage('level3')
-    steps {
-      echo 'hello2'
-    }
-
-  }
 }
-  
