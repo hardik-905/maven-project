@@ -6,10 +6,10 @@ pipeline {
         git 'https://github.com/hardik-905/maven-project.git'
       }
     }
-    stage('test the code') {
+    stage('package the code') {
       steps {
       withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
-        sh 'mvn test' 
+        sh 'mvn package' 
         }
 
       }
