@@ -8,7 +8,10 @@ pipeline {
     }
     stage('print message') {
       steps {
-       sh 'echo hello mumbai'
+      withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MVN_HOME', mavenSettingsConfig: '', traceability: true) {
+          sh 'mvn compile'
+        }
+
       }
     }
   }
