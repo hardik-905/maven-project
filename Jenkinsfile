@@ -9,7 +9,7 @@ pipeline {
         stage('validate the code') {
             steps {
                 withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true)  {
-    sh 'mvn compile'
+    sh 'mvn validate'
  }
 
             }
