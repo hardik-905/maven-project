@@ -6,15 +6,14 @@ pipeline {
                 git 'https://github.com/hardik-905/maven-project.git'
             }
         }
-        stage('Test message') {
+        stage('validate the code') {
             steps {
-                sh 'echo hello mumbai'
+                withMaven(globalMavenSettingsConfig: '', jdk: 'JDK_HOME', maven: 'MAVEN_HOME', mavenSettingsConfig: '', traceability: true)  {
+    sh 'mvn compile'
+ }
+
             }
         }
-        stage('message') {
-            steps {
-                sh 'echo delhi'
-            }
-        }
+        
     }
 }
