@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Test message') {
             steps {
-                sh 'echo hello'
+                sh 'echo hello mumbai'
             }
         }
         stage('message') {
             steps {
-                sh 'echo hello2'
+                sh 'echo delhi'
             }
         }
     }
